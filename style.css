@@ -1,0 +1,144 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f9;
+    color: #333;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    flex-direction: column; /* Ajusta a direção dos elementos para coluna */
+}
+
+/* Div para a imagem de fundo desfocada */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: url('Assets/Images/background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px); /* Aplica o desfoque */
+    opacity: 0.5; /* Ajusta a transparência da imagem para deixar mais leve */
+}
+
+/* Container com fundo retangular */
+.container {
+    background: linear-gradient(135deg, #6a0dad, #9b4d96, #6a0dad); /* Degradê de fundo */
+    padding: 15px 20px;
+    border-radius: 15px; /* Borda arredondada */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave para o fundo */
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    min-height: calc(100vh - 60px); /* Ajuste o tamanho para dar espaço para o rodapé */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ajusta o alinhamento para cima */
+    align-items: center;
+    position: relative; /* Para permitir que o rodapé seja posicionado dentro do container */
+    z-index: 2; /* Garante que o conteúdo fique sobre a imagem desfocada */
+}
+
+/* Cabeçalho */
+.profile-pic {
+    width: 100px; /* Reduz a largura */
+    height: 100px; /* Reduz a altura */
+    border-radius: 50%; /* Torna a imagem circular */
+    border: 6px solid transparent; /* Define a borda como transparente */
+    background-image: linear-gradient(45deg, #6a0dad, #9b4d96, #6a0dad); /* Degradê roxo */
+    background-clip: border-box; /* Aplica o gradiente na borda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorção */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    display: block;
+    user-select: none; /* Desativa a seleção da imagem */
+    pointer-events: none; /* Impede que a imagem seja clicada ou arrastada */
+}
+
+/* Títulos e descrição */
+h1 {
+    font-size: 1.25rem;
+    margin: 8px 0;
+    color: white; /* Título branco */
+}
+
+p {
+    font-size: 0.9rem;
+    color: #f4f4f9;
+    margin-bottom: 10px; /* Espaçamento maior */
+}
+
+/* Lista de links */
+.links {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px; /* Maior espaçamento entre os links e o texto acima */
+}
+
+.links li {
+    margin: 5px 0; /* Reduz o espaçamento entre os itens */
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    padding: 10px 18px; /* Menos padding para compactar */
+    border-radius: 5px; /* Torna os botões levemente arredondados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Menos espaçamento entre ícone e texto */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    font-weight: bold;
+    border: 3px solid transparent; /* Define a borda transparente */
+    background-image: linear-gradient(45deg, #6a0dad, #9b4d96, #6a0dad); /* Degradê no botão */
+    background-origin: border-box; /* Aplica o degradê na borda */
+    color: white; /* Garante que o texto fique branco */
+    transition: all 0.3s ease; /* Transição suave para hover */
+}
+
+.links a:hover {
+    background-color: #6a0dad; /* Altera o fundo no hover */
+    color: white; /* Garante que o texto fique branco */
+    border-color: #6a0dad; /* Altera a cor da borda no hover */
+}
+
+/* Ícones */
+.links a i {
+    font-size: 18px; /* Ícones menores */
+}
+
+/* Rodapé fixado na parte inferior da .container com faixa preta */
+footer {
+    position: absolute; /* Fixa o rodapé dentro do .container */
+    bottom: 0; /* Coloca o rodapé na parte inferior da .container */
+    left: 0;
+    width: 100%; /* Preenche a largura da .container */
+    text-align: center;
+    color: #f4f4f9;
+    font-size: 12px;
+    background-color: black; /* Faixa preta */
+    padding: 10px 20px; /* Ajusta o espaçamento interno para combinar com o padding da .container */
+    border-radius: 0 0 15px 15px; /* Apenas arredonda os cantos inferiores */
+    box-sizing: border-box;
+}
+
+/* Nome personalizado com gradiente metálico */
+.custom-name {
+    font-weight: bold;
+    font-size: 0.8rem; /* Reduzi o tamanho da fonte */
+    background: linear-gradient(45deg, #c0c0c0, #a8a8a8, #dcdcdc, #a8a8a8); /* Gradiente metálico */
+    -webkit-background-clip: text; /* Aplica o gradiente apenas no texto */
+    background-clip: text; /* Aplicação para navegadores que suportam a propriedade sem o prefixo */
+    color: transparent; /* Garante que o gradiente funcione corretamente */
+    text-transform: uppercase; /* Deixa o nome em maiúsculas */
+    display: inline; /* Alinha o nome normalmente */
+    -webkit-text-fill-color: transparent; /* Faz o texto herdar o gradiente no WebKit */
+    user-select: text; /* Permite que o nome seja selecionado */
+}
